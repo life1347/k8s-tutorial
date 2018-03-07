@@ -1,0 +1,7 @@
+# kubectl -n default create configmap bar --from-literal=TEST_KEY=TESTVALUE
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: bar
+data:
+  TEST_KEY: TESTVALUE

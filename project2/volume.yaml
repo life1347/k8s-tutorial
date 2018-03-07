@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: dummy-ns
+  name: dummy-pod
+spec:
+  containers:
+  - name: example-pod
+    image: alpine:3.6
+    imagePullPolicy: IfNotPresent
+    command: ["sleep"]
+    args: ["3600"]
+    volumeMounts:
+    - mountPath: /log
+      name: logdir
+  - name: hello-world
+    image: alpine:3.6
+    command: ["sleep"]
+    args: ["3600"]
+    volumeMounts:
+    - mountPath: /another/log/path
+      name: logdir
+  volumes:
+  - emptyDir: {}
+    name: logdir
