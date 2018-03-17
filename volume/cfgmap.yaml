@@ -32,7 +32,7 @@ spec:
       name: bar
       items:
         - key: TEST_KEY
-          path: path/to/configvalue
+          path: shared-config
 
 ---
 apiVersion: v1
