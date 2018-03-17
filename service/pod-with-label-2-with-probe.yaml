@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod-2
+  namespace: default
+  labels:
+    app: nginx
+    backend: go
+spec:
+  containers:
+  - image: nginx:latest
+    imagePullPolicy: Always
+    name: nginx
+    ports:
+      - containerPort: 80
+        protocol: TCP
+    livenessProbe:
+      httpGet:
+        path: /dummy-healthz-url
+        port: 80
+      initialDelaySeconds: 3
+      periodSeconds: 3
+
+
+      

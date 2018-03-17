@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod-volume
+  namespace: default
+  labels:
+    app: nginx
+    backend: python
+spec:
+  containers:
+  - image: nginx:latest
+    imagePullPolicy: Always
+    name: nginx
+    ports:
+      - containerPort: 80
+        protocol: TCP
+    volumeMounts:
+    - mountPath: /share
+      name: shared-volume
+  - image: trinitronx/python-simplehttpserver
+    name: python-server
+    imagePullPolicy: Always
+    volumeMounts:
+    - mountPath: /share
+      name: shared-volume
+  volumes:
+  - name: shared-volume
+    emptyDir: {}
+
+

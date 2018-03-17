@@ -1,0 +1,56 @@
+# kubectl -n default create configmap bar --from-literal=TEST_KEY=TESTVALUE
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: bar
+data:
+  TEST_KEY: TESTVALUE
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod-config-volume
+  namespace: default
+  labels:
+    app: nginx
+    backend: python
+spec:
+  containers:
+  - image: nginx:latest
+    imagePullPolicy: Always
+    name: nginx
+    ports:
+      - containerPort: 80
+        protocol: TCP
+    volumeMounts:
+    - mountPath: /configs
+      name: config-volume
+  volumes:
+  - name: config-volume
+    configMap:
+      name: bar
+      items:
+        - key: TEST_KEY
+          path: path/to/configvalue
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod-config-env
+  namespace: default
+  labels:
+    app: nginx
+    backend: python
+spec:
+  containers:
+  - image: nginx:latest
+    imagePullPolicy: Always
+    name: nginx
+    env:
+      - name: CONFIG_ENV_KEY
+        valueFrom:
+          configMapKeyRef:
+            name: bar
+            key: TEST_KEY
