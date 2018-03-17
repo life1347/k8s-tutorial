@@ -14,8 +14,5 @@ $ kubectl run -i --rm --tty demo --image=life1347/ubuntu-kube-demo —restart=Ne
 $ minikube start
 ```
 
-* 更多 Kubernetes 相關說明文章
-
-``` bash
-$ https://tachingchen.com/tw/categories/kubernetes/
-```
+* 更多 Kubernetes 相關文章
+   * https://tachingchen.com/tw/categories/kubernetes/
