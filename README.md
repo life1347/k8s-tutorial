@@ -1,3 +1,9 @@
+Kubernetes 101
+---
+
+* Slide
+    * https://tachingchen.com/tw/blog/kubernetes-101/
+
 * Kubernetes installation
     * https://tachingchen.com/tw/blog/kubernetes-installation-with-kubeadm/
 
@@ -14,5 +20,6 @@ $ kubectl run -i --rm --tty demo --image=life1347/ubuntu-kube-demo —restart=Ne
 $ minikube start
 ```
 
-* 更多 Kubernetes 相關文章
-   * https://tachingchen.com/tw/categories/kubernetes/
+* More Kubernetes related posts
+   * 中文: https://tachingchen.com/tw/categories/kubernetes/
+   * English: https://tachingchen.com/categories/kubernetes/
