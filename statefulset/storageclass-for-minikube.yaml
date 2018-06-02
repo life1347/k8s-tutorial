@@ -1,0 +1,9 @@
+# More storage class please visit https://kubernetes.io/docs/concepts/storage/storage-classes
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: my-storage-class
+  namespace: default
+provisioner: k8s.io/minikube-hostpath
+parameters:
+  type: pd-ssd

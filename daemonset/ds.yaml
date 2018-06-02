@@ -1,21 +1,19 @@
 # for old k8s cluster: 
 # apiVersion: extensions/v1beta1
 apiVersion: apps/v1
-kind: Deployment
+kind: DaemonSet
 metadata:
-  name: nginx-deployment-1
+  name: nginx-daemonset-1
   namespace: default
   labels:
     app: nginx
 spec:
-  replicas: 3
   selector:
     matchLabels:
       app: nginx
-  strategy:
+  updateStrategy:
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 1
       maxUnavailable: 1
   minReadySeconds: 5
   template:

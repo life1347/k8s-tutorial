@@ -1,0 +1,12 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: my-storage-class
+  namespace: default
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-standard
+  zones: asia-east1-b
+  # replication-type is not available on v1.9.6-gke.1 with 
+  # error "invalid option 'replication-type' for volume plugin kubernetes.io/gce-pd"
+  # replication-type: none

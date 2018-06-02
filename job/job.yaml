@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: hello
+  namespace: default
+spec:
+  template:
+    spec:
+      containers:
+      - name: hellow
+        image: busybox
+        args:
+        - /bin/sh
+        - -c
+        - date; echo Hello World
+      restartPolicy: OnFailure
