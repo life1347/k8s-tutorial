@@ -4,7 +4,7 @@ apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: nginx-daemonset-1
-  namespace: default
+  # namespace: default
   labels:
     app: nginx
 spec:
@@ -19,7 +19,7 @@ spec:
   template:
     metadata:
       name: nginx-pod-1
-      namespace: default
+      # namespace: default
       labels:
         app: nginx
     spec:

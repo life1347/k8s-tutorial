@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: nginx-pod-3
-  namespace: default
+  # namespace: default
   labels:
     backend: go
 spec:

@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nginx
-  namespace: default
+  # namespace: default
   labels:
     app: nginx
 spec:
@@ -18,7 +18,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: web
-  namespace: default
+  # namespace: default
 spec:
   selector:
     matchLabels:

@@ -4,7 +4,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment-1
-  namespace: default
+  # namespace: default
   labels:
     app: nginx
 spec:
@@ -21,7 +21,7 @@ spec:
   template:
     metadata:
       name: nginx-pod-1
-      namespace: default
+      # namespace: default
       labels:
         app: nginx
     spec:

@@ -2,7 +2,7 @@ apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   name: hello
-  namespace: default
+  # namespace: default
 spec:
   schedule: "*/1 * * * *"
   successfulJobsHistoryLimit: 1

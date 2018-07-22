@@ -3,7 +3,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: bar
-  namespace: default
+  # namespace: default
 data:
   TEST_KEY: TESTVALUE
 
@@ -12,7 +12,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: nginx-pod-config-volume
-  namespace: default
+  # namespace: default
   labels:
     app: nginx
     backend: python
@@ -40,7 +40,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: nginx-pod-config-env
-  namespace: default
+  # namespace: default
   labels:
     app: nginx
     backend: python
